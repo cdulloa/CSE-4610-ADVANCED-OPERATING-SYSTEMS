@@ -6,6 +6,7 @@
 #include "filesys.h"
 #include "shell.h"
 #include "table.h"
+#include "block.h"
 
 using namespace std;
 
@@ -18,11 +19,11 @@ int main()
     //
 
     // From http://cse.csusb.edu/murphy/cse4610/main2.cpp.txt
-    Sdisk sdisk = Sdisk("sdisk.txt", 256, 128);
-    Fsys fsys=Fsys("sdisk.txt",256,128);
-    Shell shell = Shell("sdisk.txt", 256, 128);
-    Table table=Table("sdisk.txt",256,128);
-    table.BuildTable("data.txt");
+
+    Sdisk disk1("disk1", 256, 128);
+ 	Filesys fsys("disk1", 256, 128);
+    Shell shell("disk1", 256, 128);
+    Table table("disk1", 256, 128, "flat", "index"); 
 
     string s;
     string command = "go";
@@ -88,8 +89,9 @@ int main()
 
 // int main()
 // {
-//   Sdisk disk1("disk1",256,128);
-//   Filesys fsys("disk1",256,128);
+//   sdisk disk1("disk1",256,128);
+//   filesys fsys("disk1",256,128);
+//   
 //   fsys.newfile("file1");
 //   fsys.newfile("file2"};
 

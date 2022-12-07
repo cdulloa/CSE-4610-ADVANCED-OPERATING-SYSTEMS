@@ -4,6 +4,7 @@
 #include<cstdlib>
 #include "table.h"
 #include "filesys.h"
+#include "block.h"
 
 Table::Table(string diskname, int numberofblocks, int blocksize, string flatfile, string indexfile) : Filesys(diskname, numberofblocks, blocksize)
 {

@@ -13,22 +13,20 @@ Sdisk::Sdisk(string diskname, int numberofblocks, int blocksize)
 
  if(!outfile.good()) //no exist
     {
-      cout << diskName << " doesn't exist.\n";
       outfile.close();
       ofstream outfile;
-      outfile.open(diskName.c_str(), ios::in | ios::out);
+      outfile.open(diskname.c_str(), ios::in | ios::out);
       for(int i = 0; i < (blocksize * numberofblocks); i++)
       {
         outfile.put('#');
       }
 
-      cout << diskName << "now exists.\n";
-      return;
     }
 
   if(outfile.good())
   {
     cout << diskName << " exists.\n";
+
   }
   // outfile.close();
 
@@ -51,10 +49,9 @@ int Sdisk::getblock(int blocknumber, string& buffer)
   outfile.open(diskname.c_str(), ios::in | ios::out);
 
   //position of block
-  int position = blocknumber * blocksize;
-  outfile.seekg(position);
+  outfile.seekg(blocknumber * blocksize);
 
-for (int i = 0; i < blocksize; i++)
+for (int i = 0; i < buffer.length(); i++)
 	{
 
 		char c = outfile.get();
@@ -64,18 +61,20 @@ for (int i = 0; i < blocksize; i++)
 
 }
 
-int Sdisk::putblock(int blocknumber, string buffer){
+int Sdisk::putblock(int blocknumber, string buffer)
+{
   fstream outfile;
   outfile.open(diskname.c_str(), ios::in | ios::out);
-  //block's position
-  int position = blocknumber * blocksize;
-  outfile.seekg(position);
 
-  for (int i = 0; i < blocksize; i++)
+  //block's position
+  outfile.seekg(blocknumber * blocksize);
+
+  for (int i = 0; i < buffer.length(); i++)
 	{
 		outfile.put(buffer[i]);
 	}
   outfile.close();
   return 1;
+
 }
 
