@@ -1,8 +1,9 @@
 #include "shell.h"
 #include "filesys.h"
 
-Shell::Shell(string diskname, int numberofblocks, int blocksize ) : Filesys( diskname, numberofblocks, blocksize )
+using namespace std;
 
+Shell::Shell(string filename, int blocksize, int numberofblocks ) : Filesys( diskname, numberofblocks, blocksize )
 {
 
 }

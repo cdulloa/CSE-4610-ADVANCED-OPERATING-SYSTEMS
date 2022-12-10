@@ -17,7 +17,7 @@ public:
     int readblock(string file, int blocknumber, string &buffer);
     int writeblock(string file, int blocknumber, string buffer);
     int nextblock(string file, int blocknumber);
-
+    bool checkblock(string file, int blocknumber);
     vector<string> ls(); // saves names of files in ROOT to a vector
 
 private:

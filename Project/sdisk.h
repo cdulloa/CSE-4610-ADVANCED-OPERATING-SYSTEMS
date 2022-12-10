@@ -8,7 +8,7 @@
 
 using namespace std;
 
-class sdisk
+class Sdisk
 {
 public:
     Sdisk(string diskname, int numberofblocks, int blocksize);

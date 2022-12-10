@@ -1,7 +1,8 @@
-#include<iostream>
-#include<sstream>
-#include<vector>
-#include<string>
+#include <iostream>
+#include <sstream>
+#include <vector>
+#include <string>
+#include <iostream>
 #include "sdisk.h"
 #include "filesys.h"
 #include "shell.h"
@@ -52,17 +53,17 @@ int main()
         if (command == "dir")
         {
             // use the ls function
-            Shell.dir();
+            shell.dir();
         }
         if (command == "add")
         {
             // The variable op1 is the new file and op2 is the file data
-            Shell.add(op1, op2);
+            shell.add(op1, op2);
         }
         if (command == "del")
         {
             // The variable op1 is the file
-            Shell.del(op1)
+            shell.del(op1);
         }
         if (command == "type")
         {
@@ -72,13 +73,13 @@ int main()
         if (command == "copy")
         {
             // The variable op1 is the source file and the variable op2 is the destination file.
-            Shell.copy(op1, op2);
+            shell.copy(op1, op2);
         }
         if (command == "search")
         {
             // This is the command for Project 4
             // The variable op1 is the date
-            Table.search(op1)
+            table.Search(op1);
         }
     }
 
