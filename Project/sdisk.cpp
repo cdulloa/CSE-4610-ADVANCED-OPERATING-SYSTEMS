@@ -24,7 +24,7 @@ Sdisk::Sdisk(string diskname, int numberofblocks, int blocksize)
 
   if (outfile.good())
   {
-    cout << diskName << " exists.\n";
+    cout << diskname << " exists.\n";
   }
   // outfile.close();
 }
